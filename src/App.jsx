@@ -45,7 +45,13 @@ const App = () => {
       </div>
     </nav>
 
-      <div className="w-25">
+
+
+
+    <div className="row">
+
+      <div className="col-3 p-5">
+        <h4>カテゴリー一覧</h4>
 
       <ul>
         <button onClick={() => selectCategory('all')}>all</button>
@@ -68,7 +74,8 @@ const App = () => {
 
       </div>
 
-      <div className="w-75">
+
+      <div className="col-9 p-5">
       <h2>求人一覧</h2>
         <ul>
 
@@ -86,6 +93,7 @@ const App = () => {
         </ul>
 
 
+      </div>
       </div>
 
     </>
