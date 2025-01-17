@@ -1,3 +1,4 @@
+import { Outlet } from "react-router-dom"
 
 
 const Homelayout = () => {
@@ -20,6 +21,8 @@ const Homelayout = () => {
             </ul>
         </div>
         </nav>
+
+        <Outlet></Outlet>
     
     </>
   )
