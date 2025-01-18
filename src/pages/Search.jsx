@@ -12,6 +12,12 @@ const Search = () => {
 
     const filterItems = (category) => {
         console.log(category);
+        if(category === 'all'){
+            setJobs(data)
+            return;
+        }
+        const newItems = data.filter((item) => item.category === category )
+        setJobs(newItems)
         
     }
   return (
@@ -25,6 +31,8 @@ const Search = () => {
         <h4>カテゴリー一覧</h4>
 
         <Category categorys={categorys} filterItems={filterItems} />
+
+        
         <select className="w-40"  name="item">
         {incomes.map((income) => {
             return(
