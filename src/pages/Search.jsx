@@ -6,8 +6,10 @@ import Category from "../components/Category";
 
 
 const Search = () => {
+    const allCategorys = ['all', ...new Set(data.map((item) => item.category ))]
     const [ jobs,setJobs ] = useState(data)
-    const categorys = Array.from(new Set(jobs.map((job) => job.category)));
+    const [ categorys,setCategorys ] = useState(allCategorys)
+
     const incomes = Array.from(new Set(jobs.map((job) => job.income)))
 
     const filterItems = (category) => {
@@ -32,7 +34,7 @@ const Search = () => {
 
         <Category categorys={categorys} filterItems={filterItems} />
 
-        
+
         <select className="w-40"  name="item">
         {incomes.map((income) => {
             return(
