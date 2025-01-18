@@ -46,15 +46,14 @@ const Search = () => {
         })}
 
         </ul>
-        {
-        incomes.map((income) => {
+        <select className="w-40"  name="item">
+        {incomes.map((income) => {
             return(
-            <select className="w-40"  onChange={() => selectIncome(income)} name="item">
             <option >{income}</option>
-            </select>
-            )
-        })
+                )
+            })
         }
+        </select>
 
         <button type="submit" className="btn btn-info">検索</button>
 
