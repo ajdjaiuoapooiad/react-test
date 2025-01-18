@@ -1,6 +1,7 @@
 import { useState } from "react";
 import data from '../data';
 import { Form } from "react-router-dom";
+import JobContainer from "../components/JobContainer";
 
 
 const Search = () => {
@@ -64,22 +65,7 @@ const Search = () => {
 
 
         <div className="col-9 p-5">
-        <h2>求人一覧</h2>
-        <ul>
-
-        {posts.map((p) => {
-            return (
-            <div>
-                <li>{p.id}</li>
-                <li>{p.title}</li>
-                <li>{p.category}</li>
-                <li>{p.income}</li>
-            </div>
-            )
-        })}
-
-        </ul>
-
+        <JobContainer />
 
 
 

@@ -1,5 +1,6 @@
 import { useRef, useState } from "react"
 import data from '../data';
+import JobContainer from '../components/JobContainer';
 
 
 const Create = () => {
@@ -7,14 +8,16 @@ const Create = () => {
     const categorys = Array.from(new Set(jobs.map((j) => j.category)));
     const jobTitleRef = useRef()
     const jobIncomeRef = useRef()
-    const jobCategoryRef = useRef()
 
-    const handleClick = () => {
+
+    const handleAddJob = () => {
       const title =jobTitleRef.current.value
       const income = jobIncomeRef.current.value
-      
-      console.log(title,income);
-      
+      setJobs((prevJob) => {
+        return [...prevJob,{id: 10,title: title,income: income,category: 'Python'}]
+      })
+      jobTitleRef.current.value = null;
+      jobIncomeRef.current.value = null;
     }
 
     
@@ -34,7 +37,7 @@ const Create = () => {
         <input type="text" ref={jobIncomeRef} />
 
         <h4>Category</h4>
-        <select name=""   ref={jobCategoryRef}>
+        <select name=""   >
           {categorys.map((c) => {
             return (
               <option value="" key={c.id}>{c}</option>
@@ -44,10 +47,16 @@ const Create = () => {
           
         </select>
 
-        <button className="btn btn-info"  onClick={handleClick}>送信</button>
+        <button className="btn btn-info"  onClick={handleAddJob}>送信</button>
 
+
+        <div>
+
+          <JobContainer />
+        </div>
   
       </div>
+
       </>
     )
   }
