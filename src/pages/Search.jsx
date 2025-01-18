@@ -34,10 +34,12 @@ const Search = () => {
         <h4>カテゴリー一覧</h4>
 
         <ul>
-        <button onClick={() => selectCategory('all')}>all</button>
         {categorys.map((c) => {
             return (
-            <button onClick={() => selectCategory(c)} key={c.id} >{c}</button>
+                <>
+                <input type='checkbox'  key={c.id} /> {c}
+                <br /> 
+                </>
             )
         })}
 
