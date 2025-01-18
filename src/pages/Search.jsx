@@ -1,5 +1,6 @@
 import { useState } from "react";
 import data from '../data';
+import { Form } from "react-router-dom";
 
 
 const Search = () => {
@@ -30,6 +31,9 @@ const Search = () => {
         <div className="row">
 
         <div className="col-3 p-5">
+
+        <Form className="">
+
         <h4>カテゴリー一覧</h4>
 
         <ul>
@@ -51,7 +55,12 @@ const Search = () => {
         })
         }
 
+        <button type="submit" className="btn btn-info">検索</button>
+
+        </Form>
+
         </div>
+
 
 
         <div className="col-9 p-5">
@@ -70,6 +79,8 @@ const Search = () => {
         })}
 
         </ul>
+
+
 
 
         </div>
