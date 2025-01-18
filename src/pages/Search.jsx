@@ -2,6 +2,7 @@ import { useState } from "react";
 import data from '../data';
 import { Form } from "react-router-dom";
 import JobContainer from "../components/JobContainer";
+import Category from "../components/Category";
 
 
 const Search = () => {
@@ -9,6 +10,10 @@ const Search = () => {
     const categorys = Array.from(new Set(jobs.map((job) => job.category)));
     const incomes = Array.from(new Set(jobs.map((job) => job.income)))
 
+    const filterItems = (category) => {
+        console.log(category);
+        
+    }
   return (
     <>
         <div className="row">
@@ -19,17 +24,7 @@ const Search = () => {
 
         <h4>カテゴリー一覧</h4>
 
-        <ul>
-        {categorys.map((c) => {
-            return (
-                <>
-                <input type='checkbox'  key={c.id} /> {c}
-                <br /> 
-                </>
-            )
-        })}
-
-        </ul>
+        <Category categorys={categorys} filterItems={filterItems} />
         <select className="w-40"  name="item">
         {incomes.map((income) => {
             return(
