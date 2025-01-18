@@ -3,22 +3,35 @@ import data from '../data';
 import { Form } from "react-router-dom";
 import JobContainer from "../components/JobContainer";
 import Category from "../components/Category";
+import Income from "../components/Income";
 
 
 const Search = () => {
     const allCategorys = ['all', ...new Set(data.map((item) => item.category ))]
+    const allIncomes = ['all', ...new Set(data.map((item) => item.income ))]
     const [ jobs,setJobs ] = useState(data)
     const [ categorys,setCategorys ] = useState(allCategorys)
+    const [ incomes,setIncomes ] = useState(allIncomes)
 
-    const incomes = Array.from(new Set(jobs.map((job) => job.income)))
 
-    const filterItems = (category) => {
+    const filterCategoryItems = (category) => {
         console.log(category);
         if(category === 'all'){
             setJobs(data)
             return;
         }
         const newItems = data.filter((item) => item.category === category )
+        setJobs(newItems)
+        
+    }
+
+    const filterIncomeItems = (income) => {
+        console.log(income);
+        if(income === 'all'){
+            setJobs(data)
+            return;
+        }
+        const newItems = data.filter((item) => item.income === income )
         setJobs(newItems)
         
     }
@@ -32,17 +45,8 @@ const Search = () => {
 
         <h4>カテゴリー一覧</h4>
 
-        <Category categorys={categorys} filterItems={filterItems} />
-
-
-        <select className="w-40"  name="item">
-        {incomes.map((income) => {
-            return(
-            <option key={income.id} >{income}</option>
-                )
-            })
-        }
-        </select>
+        <Category categorys={categorys} filterItems={filterCategoryItems} />
+        <Income incomes={incomes} filterItems={filterIncomeItems} />
 
         <button type="submit" className="btn btn-info">検索</button>
 
