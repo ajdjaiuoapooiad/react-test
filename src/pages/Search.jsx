@@ -20,11 +20,7 @@ const Search = () => {
         setJobs(selectedJob);
     }
 
-    const selectIncome = (income) => {
 
-        const selectedJob = jobs.filter((job) => job.income === income)
-        setJobs(selectedJob);
-    }
 
 
   return (
@@ -49,7 +45,7 @@ const Search = () => {
         <select className="w-40"  name="item">
         {incomes.map((income) => {
             return(
-            <option >{income}</option>
+            <option key={income.id} >{income}</option>
                 )
             })
         }

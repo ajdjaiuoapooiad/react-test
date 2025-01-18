@@ -16,7 +16,8 @@ const JobContainer = ({jobs}) => {
 
                     <div class="alert alert-success" role="alert">
                         <h4 class="alert-heading">{j.title}</h4>
-                        <p>{j.category} <strong>{j.income}</strong></p>
+                        <strong>カテゴリー: {j.category}</strong>
+                        <p>年収: {j.income}</p>
 
                     </div>
                 </div>
