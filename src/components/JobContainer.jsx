@@ -1,9 +1,8 @@
-import { useState } from "react"
-import data from "../data"
 
 
-const JobContainer = () => {
-    const [ posts,setPosts ] = useState(data)
+
+const JobContainer = ({jobs}) => {
+
 
     return (
         <>
@@ -11,14 +10,17 @@ const JobContainer = () => {
             <h2>求人一覧</h2>
             <ul>
 
-            {posts.map((p) => {
+            {jobs.map((j) => {
                 return (
-                <div key={p.id}>
-                    <li>{p.id}</li>
-                    <li>{p.title}</li>
-                    <li>{p.category}</li>
-                    <li>{p.income}</li>
+                <div key={j.id}>
+
+                    <div class="alert alert-success" role="alert">
+                        <h4 class="alert-heading">{j.title}</h4>
+                        <p>{j.category} <strong>{j.income}</strong></p>
+
+                    </div>
                 </div>
+                
                 )
             })}
 

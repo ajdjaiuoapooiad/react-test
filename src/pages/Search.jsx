@@ -5,25 +5,25 @@ import JobContainer from "../components/JobContainer";
 
 
 const Search = () => {
-    const [ posts,setPosts ] = useState(data)
-    const categorys = Array.from(new Set(posts.map((post) => post.category)));
-    const incomes = Array.from(new Set(posts.map((post) => post.income)))
+    const [ jobs,setJobs ] = useState(data)
+    const categorys = Array.from(new Set(jobs.map((job) => job.category)));
+    const incomes = Array.from(new Set(jobs.map((job) => job.income)))
 
     const selectCategory = (category) => {
         if(category==='all'){
-        setPosts(posts)
+        setJobs(jobs)
         return;
         }
 
 
-        const selectedPosts = posts.filter((post) => post.category === category)
-        setPosts(selectedPosts);
+        const selectedJob = jobs.filter((job) => job.category === category)
+        setJobs(selectedJob);
     }
 
     const selectIncome = (income) => {
 
-        const selectedPosts = posts.filter((post) => post.income === income)
-        setPosts(selectedPosts);
+        const selectedJob = jobs.filter((job) => job.income === income)
+        setJobs(selectedJob);
     }
 
 
@@ -65,7 +65,7 @@ const Search = () => {
 
 
         <div className="col-9 p-5">
-        <JobContainer />
+        <JobContainer jobs={jobs} />
 
 
 

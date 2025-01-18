@@ -13,6 +13,8 @@ const Create = () => {
     const handleAddJob = () => {
       const title =jobTitleRef.current.value
       const income = jobIncomeRef.current.value
+      console.log(title,income);
+      
       setJobs((prevJob) => {
         return [...prevJob,{id: 10,title: title,income: income,category: 'Python'}]
       })
@@ -50,9 +52,9 @@ const Create = () => {
         <button className="btn btn-info"  onClick={handleAddJob}>送信</button>
 
 
-        <div>
+        <div className="p-5 col-6">
 
-          <JobContainer />
+          <JobContainer jobs={jobs} />
         </div>
   
       </div>
