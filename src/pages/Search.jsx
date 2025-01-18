@@ -9,25 +9,11 @@ const Search = () => {
     const categorys = Array.from(new Set(jobs.map((job) => job.category)));
     const incomes = Array.from(new Set(jobs.map((job) => job.income)))
 
-    const selectCategory = (category) => {
-        if(category==='all'){
-        setJobs(jobs)
-        return;
-        }
-
-
-        const selectedJob = jobs.filter((job) => job.category === category)
-        setJobs(selectedJob);
-    }
-
-
-
-
   return (
     <>
         <div className="row">
 
-        <div className="col-3 p-5">
+        <div className="col-3 p-5 bg-light">
 
         <Form className="">
 
