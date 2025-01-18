@@ -7,6 +7,15 @@ const Create = () => {
     const categorys = Array.from(new Set(jobs.map((j) => j.category)));
     const jobTitleRef = useRef()
     const jobIncomeRef = useRef()
+    const jobCategoryRef = useRef()
+
+    const handleClick = () => {
+      const title =jobTitleRef.current.value
+      const income = jobIncomeRef.current.value
+      
+      console.log(title,income);
+      
+    }
 
     
 
@@ -17,7 +26,6 @@ const Create = () => {
      
         <h1>Createページ</h1>
 
-        <form action="" >
  
         <h4>Title</h4>
 
@@ -26,19 +34,19 @@ const Create = () => {
         <input type="text" ref={jobIncomeRef} />
 
         <h4>Category</h4>
-        <select name="" id="" >
+        <select name=""   ref={jobCategoryRef}>
           {categorys.map((c) => {
             return (
-              <option value="">{c}</option>
+              <option value="" key={c.id}>{c}</option>
             )
           })}
         
           
         </select>
 
-        <button className="btn btn-info" type="submit">送信</button>
+        <button className="btn btn-info"  onClick={handleClick}>送信</button>
 
-        </form>
+  
       </div>
       </>
     )
