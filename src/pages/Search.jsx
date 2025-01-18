@@ -59,7 +59,7 @@ const Search = () => {
 
 
 
-        <div className="col-9 p-5">
+        <div className="col-9 p-5 border-start border-5">
         <JobContainer jobs={jobs} />
 
 
