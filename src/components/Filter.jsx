@@ -2,9 +2,10 @@ import { Form, Link, useLoaderData } from "react-router-dom"
 import FormInput from "./FormInput";
 
 
+
 const Filter = () => {
-    const { meta, params } = useLoaderData();
-    const {category,income} = params
+    const { meta } = useLoaderData();
+  
 
     return (
     <>
