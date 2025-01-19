@@ -1,6 +1,6 @@
 
 
-const Category = ({categorys,filterItems}) => {
+const FormCheckbox = ({categorys,filterItems}) => {
   return (
     <>
         <ul>
@@ -17,4 +17,4 @@ const Category = ({categorys,filterItems}) => {
   )
 }
 
-export default Category
+export default FormCheckbox

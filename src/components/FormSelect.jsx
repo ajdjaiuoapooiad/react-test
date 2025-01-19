@@ -1,6 +1,6 @@
 
 
-const Income = ({incomes,filterIncomeItems}) => {
+const FormSelect = ({incomes,filterIncomeItems}) => {
   return (
     <>
         <select className="w-40"  name="item" >
@@ -15,4 +15,4 @@ const Income = ({incomes,filterIncomeItems}) => {
   )
 }
 
-export default Income
+export default FormSelect

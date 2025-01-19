@@ -2,8 +2,8 @@ import { useState } from "react";
 import data from '../data';
 import { Form } from "react-router-dom";
 import JobContainer from "../components/JobContainer";
-import Category from "../components/Category";
-import Income from "../components/Income";
+import FormCheckbox from "../components/FormCheckbox";
+import FormSelect from "../components/FormSelect";
 
 
 const Search = () => {
@@ -45,8 +45,8 @@ const Search = () => {
 
         <h4>カテゴリー一覧</h4>
 
-        <Category categorys={categorys} filterItems={filterCategoryItems} />
-        <Income incomes={incomes} filterItems={filterIncomeItems} />
+        <FormCheckbox categorys={categorys} filterItems={filterCategoryItems} />
+        <FormSelect incomes={incomes} filterItems={filterIncomeItems} />
 
         <button type="submit" className="btn btn-info">検索</button>
 
