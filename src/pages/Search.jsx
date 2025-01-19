@@ -1,8 +1,8 @@
-import { useState } from "react";
-import data from '../data';
-import JobContainer from "../components/JobContainer";
+
 import Filter from "../components/Filter";
-import { customFetch } from "../utils";
+import { customFetch } from '../utils/index';
+import JobList from "../components/JobList";
+
 
 
 const url = '/search';
@@ -19,9 +19,6 @@ export const loader = async ({ request }) => {
 };
 
 const Search = () => {
-
-  const [ jobs,setJobs ] = useState(data)
-
   return (
     <>
         <div className="row">
@@ -41,7 +38,7 @@ const Search = () => {
 
         {/* Left Page */}
         <div className="col-9 p-5 border-start border-5">
-        <JobContainer jobs={jobs} />
+        <JobList />
 
 
 

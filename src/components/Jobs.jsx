@@ -1,7 +1,7 @@
 
 
 
-const JobContainer = ({jobs}) => {
+const Jobs = ({jobs}) => {
 
 
     return (
@@ -14,8 +14,8 @@ const JobContainer = ({jobs}) => {
                 return (
                 <div key={j.id}>
 
-                    <div class="alert alert-success" role="alert">
-                        <h4 class="alert-heading">{j.title}</h4>
+                    <div className="alert alert-success" role="alert">
+                        <h4 className="alert-heading">{j.title}</h4>
                         <strong>カテゴリー: {j.category}</strong>
                         <p>年収: {j.income}</p>
 
@@ -31,4 +31,4 @@ const JobContainer = ({jobs}) => {
     )
 }
 
-export default JobContainer
+export default Jobs
