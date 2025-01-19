@@ -5,7 +5,7 @@ import JobList from "../components/JobList";
 
 
 
-const url = '/search';
+const url = '/products';
 export const loader = async ({ request }) => {
   const params = Object.fromEntries([
     ...new URL(request.url).searchParams.entries(),
@@ -18,7 +18,7 @@ export const loader = async ({ request }) => {
   return { products, meta, params };
 };
 
-const Search = () => {
+const Products = () => {
   return (
     <>
         <div className="row">
@@ -48,4 +48,4 @@ const Search = () => {
   )
 }
 
-export default Search
+export default Products

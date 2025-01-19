@@ -1,6 +1,5 @@
 import { Form, Link, useLoaderData } from "react-router-dom"
-import FormCheckbox from "./FormCheckbox"
-import FormSelect from "./FormSelect"
+import FormInput from "./FormInput";
 
 
 const Filter = () => {
@@ -10,11 +9,9 @@ const Filter = () => {
     return (
     <>
         <Form className="">
+        <FormInput type='search' label='search product' name='search' />
 
-
-        <FormCheckbox />
-        <FormSelect label='Income' name='income' list={meta.income} defaultValue={income} />
-
+        
         <br />
         <button type="submit" className="btn btn-info m-4">検索</button>
         <Link to='/' className="btn btn-primary">Reset</Link>

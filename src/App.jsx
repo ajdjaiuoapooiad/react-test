@@ -1,16 +1,17 @@
 import { createBrowserRouter, RouterProvider } from "react-router-dom";
 import Homelayout from "./pages/Homelayout";
-import Search, { loader as searchLoader } from './pages/Search'
+import { loader as searchLoader } from './pages/Products'
 import { loader as landingLoader } from './pages/Landing' 
 import Landing from "./pages/Landing";
 import Error from "./pages/Error";
 import ErrorElement from "./components/ErrorElement";
 import Create from './pages/Create';
+import Products from "./pages/Products";
 
 
 const router = createBrowserRouter([
   {
-    path: '/products',
+    path: '/',
     element: <Homelayout />,
     errorElement: <Error />,
     children: [
@@ -21,10 +22,10 @@ const router = createBrowserRouter([
         loader: landingLoader,
       },
       {
-        path: 'search',
-        element: <Search />,
+        path: 'products',
+        element: <Products />,
         loader: searchLoader,
-        errorElement: ErrorElement,
+        errorElement: <ErrorElement />,
       },
       {
         path: 'create',
