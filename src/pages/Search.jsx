@@ -1,6 +1,6 @@
 import { useState } from "react";
 import data from '../data';
-import { Form } from "react-router-dom";
+import { Form, Link } from "react-router-dom";
 import JobContainer from "../components/JobContainer";
 import FormCheckbox from "../components/FormCheckbox";
 import FormSelect from "../components/FormSelect";
@@ -39,6 +39,9 @@ const Search = () => {
     <>
         <div className="row">
 
+
+
+        {/* Right Page */}
         <div className="col-3 p-5 bg-light">
 
         <Form className="">
@@ -48,7 +51,9 @@ const Search = () => {
         <FormCheckbox categorys={categorys} filterItems={filterCategoryItems} />
         <FormSelect incomes={incomes} filterItems={filterIncomeItems} />
 
-        <button type="submit" className="btn btn-info">検索</button>
+        <br />
+        <button type="submit" className="btn btn-info m-4">検索</button>
+        <Link to='/' className="btn btn-primary">Reset</Link>
 
         </Form>
 
@@ -56,6 +61,8 @@ const Search = () => {
 
 
 
+
+        {/* Left Page */}
         <div className="col-9 p-5 border-start border-5">
         <JobContainer jobs={jobs} />
 
