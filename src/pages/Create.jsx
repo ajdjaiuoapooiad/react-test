@@ -39,7 +39,7 @@ const Create = () => {
         <input type="text" ref={jobIncomeRef} />
 
         <h4>Category</h4>
-        <select name=""   >
+        <select >
           {categorys.map((c) => {
             return (
               <option value="" key={c.id}>{c}</option>

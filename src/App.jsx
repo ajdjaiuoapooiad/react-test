@@ -15,7 +15,6 @@ const router = createBrowserRouter([
       {
         index:  true,
         element: <Landing />,
-        loader: searchLoader,
       },
       {
         path: 'search',
