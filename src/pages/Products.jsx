@@ -15,7 +15,7 @@ export const loader = async ({ request }) => {
   console.log(params);
   
   
-  const response = await customFetch(url, { params });
+  const response = await customFetch(urgl, { params });
 
   const products = response.data.data;
   const meta = response.data.meta;
