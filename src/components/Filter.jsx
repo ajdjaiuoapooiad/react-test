@@ -50,7 +50,7 @@ const Filter = () => {
 
         <br />
         <button type="submit" className="btn btn-info m-4">検索</button>
-        <Link to='/' className="btn btn-primary">Reset</Link>
+        <Link to='/products' className="btn btn-primary">Reset</Link>
 
         </Form>
 

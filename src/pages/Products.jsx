@@ -4,7 +4,7 @@ import { customFetch } from '../utils/index';
 import JobList from "../components/JobList";
 
 
-
+// 検索機能
 const url = '/products';
 export const loader = async ({ request }) => {
   console.log(request);
