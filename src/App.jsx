@@ -4,6 +4,7 @@ import { Create, Search } from "./pages";
 import { loader as searchLoader } from './pages/Search'
 import Landing from "./pages/Landing";
 import Error from "./pages/Error";
+import ErrorElement from "./components/ErrorElement";
 
 
 const router = createBrowserRouter([
@@ -20,6 +21,7 @@ const router = createBrowserRouter([
         path: 'search',
         element: <Search />,
         loader: searchLoader,
+        errorElement: ErrorElement,
       },
       {
         path: 'create',

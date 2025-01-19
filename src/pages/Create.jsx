@@ -1,6 +1,6 @@
 import { useRef, useState } from "react"
 import data from '../data';
-import JobContainer from '../components/JobContainer';
+import JobList from "../components/JobList";
 
 
 const Create = () => {
@@ -54,7 +54,7 @@ const Create = () => {
 
         <div className="p-5 col-6">
 
-          <JobContainer jobs={jobs} />
+          <JobList />
         </div>
   
       </div>
