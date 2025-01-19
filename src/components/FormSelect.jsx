@@ -2,23 +2,24 @@
 
 const FormSelect = ({label,name,list,defaultValue}) => {
   return (
-    <>
-        <div>
-          <label htmlFor={name} className="label">
-            <span>{label}</span>
-          </label>
-
-          <select name={name} id={name} defaultValue={defaultValue}>
-            {list.map((item) => {
-              return (
-                <option key={item} value={item}>
+      <div className='form-control'>
+        <label htmlFor={name} className='label'>
+          <span className='label-text capitalize'>{label}</span>
+        </label>
+        <select
+          name={name}
+          id={name}
+          defaultValue={defaultValue}
+        >
+          {list.map((item) => {
+            return (
+              <option key={item} value={item}>
                 {item}
               </option>
-              )
-            })}
-          </select>
-        </div>
-    </>
+            );
+          })}
+        </select>
+      </div>
   )
 }
 

@@ -7,6 +7,8 @@ import JobList from "../components/JobList";
 
 const url = '/products';
 export const loader = async ({ request }) => {
+  console.log(request);
+  
   const params = Object.fromEntries([
     ...new URL(request.url).searchParams.entries(),
   ]);
