@@ -1,20 +1,15 @@
-
-
-const FormCheckbox = ({categorys,filterItems}) => {
+const FormCheckbox = ({ label, name, defaultValue, size }) => {
   return (
-    <>
-        <ul>
-        {categorys.map((c) => {
-            return (
-                <>
-                <input type='button'  value={c} key={c}  onClick={() => filterItems(c)}/> 
-                <br /> 
-                </>
-            )
-        })}
-        </ul>
-    </>
-  )
-}
-
-export default FormCheckbox
+    <div className='form-control items-center'>
+      <label htmlFor={name} className='label cursor-pointer'>
+        <span className='label-text capitalize'>{label}</span>
+      </label>
+      <input
+        type='checkbox'
+        name={name}
+        defaultChecked={defaultValue}
+      />
+    </div>
+  );
+};
+export default FormCheckbox;
