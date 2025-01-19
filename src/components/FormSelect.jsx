@@ -1,16 +1,23 @@
 
 
-const FormSelect = ({incomes,filterIncomeItems}) => {
+const FormSelect = ({label,name,list,defaultValue}) => {
   return (
     <>
-        <select className="w-40"  name="item" >
-        {incomes.map((income) => {
-            return(
-            <option key={income.id}  >{income}</option>
-                )
-            })
-        }
-        </select>
+        <div>
+          <label htmlFor={name} className="label">
+            <span>{label}</span>
+          </label>
+
+          <select name={name} id={name} defaultValue={defaultValue}>
+            {list.map((item) => {
+              return (
+                <option key={item} value={item}>
+                {item}
+              </option>
+              )
+            })}
+          </select>
+        </div>
     </>
   )
 }
