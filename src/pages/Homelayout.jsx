@@ -13,7 +13,7 @@ const Homelayout = () => {
         <div className="collapse navbar-collapse" id="navbarTogglerDemo02">
             <ul className="navbar-nav mr-auto mt-2 mt-md-0">
             <li className="nav-item active">
-                <Link to='/' className="nav-link  text-white ">Search</Link>
+                <Link to='/search' className="nav-link  text-white ">Search</Link>
             </li>
             <li className="nav-item">
                 <Link to='/create' className="nav-link  text-white ">Create</Link>
