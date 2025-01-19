@@ -1,21 +1,24 @@
 import { createBrowserRouter, RouterProvider } from "react-router-dom";
 import Homelayout from "./pages/Homelayout";
-import { Create, Search } from "./pages";
-import { loader as searchLoader } from './pages/Search'
+import Search, { loader as searchLoader } from './pages/Search'
+import { loader as landingLoader } from './pages/Landing' 
 import Landing from "./pages/Landing";
 import Error from "./pages/Error";
 import ErrorElement from "./components/ErrorElement";
+import Create from './pages/Create';
 
 
 const router = createBrowserRouter([
   {
-    path: '/',
+    path: '/products',
     element: <Homelayout />,
     errorElement: <Error />,
     children: [
       {
         index:  true,
         element: <Landing />,
+        errorElement: ErrorElement,
+        loader: landingLoader,
       },
       {
         path: 'search',
