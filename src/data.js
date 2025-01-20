@@ -1,6 +1,6 @@
 
 
-const data = [
+export default [
     {
         id: 1,
         title: '大企業内定多数！注目の松尾研発スタートアップで学生エンジニア採用強化！',
@@ -31,4 +31,3 @@ const data = [
     },
     ]
     
-    export default data
