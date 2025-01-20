@@ -1,34 +1,26 @@
+import Job from "./Job"
 
 
 
 const Jobs = ({jobs}) => {
 
+  return (
+    <div>
 
-    return (
-        <>
+    <h2>求人一覧</h2>
+
+      {jobs.map((job) => {
+        console.log(job);
         
-            <h2>求人一覧</h2>
-            <ul>
+          return (
+            <Job key={job.id}  {...job} />
+          )
+      })}
 
-            {jobs.map((j) => {
-                return (
-                <div key={j.id}>
 
-                    <div className="alert alert-success" role="alert">
-                        <h4 className="alert-heading">{j.title}</h4>
-                        <strong>カテゴリー: {j.category}</strong>
-                        <p>年収: {j.income}</p>
+    </div>
 
-                    </div>
-                </div>
-                
-                )
-            })}
-
-            </ul>
-
-        </>
-    )
+  )
 }
 
 export default Jobs
