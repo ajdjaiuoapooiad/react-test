@@ -13,7 +13,8 @@ export const loader = async ({ request }) => {
 
   const products = response.data.data;
   const meta = response.data.meta;
-
+  console.log(meta);
+  
   return { products, meta, params };
 };
 
