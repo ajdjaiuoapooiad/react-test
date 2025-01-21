@@ -1,19 +1,14 @@
 import Filter from "../components/Filter";
 import { customFetch } from "../utils/index";
-import { useEffect, useState } from "react";
-import data from "../data";
-import Jobs from "../components/Jobs";
+import ProductsContainer from "../components/ProductsContainer";
+
 
 // 検索機能
-const url = "/products";
+const url = '/products';
 export const loader = async ({ request }) => {
-  console.log(request);
-  // ParamsからUrlを検索する
   const params = Object.fromEntries([
     ...new URL(request.url).searchParams.entries(),
   ]);
-  console.log(params);
-
   const response = await customFetch(url, { params });
 
   const products = response.data.data;
@@ -23,22 +18,6 @@ export const loader = async ({ request }) => {
 };
 
 const Products = () => {
-  const [jobs, setJobs] = useState([]);
-
-  const fetchData = async () => {
-    try {
-      const response = await fetch(data);
-      const jobs = await response.json();
-      setJobs(jobs);
-      console.log(jobs);
-    } catch (error) {
-      console.log(error);
-    }
-  };
-
-  useEffect(() => {
-    fetchData();
-  }, []);
 
   return (
     <>
@@ -52,7 +31,7 @@ const Products = () => {
 
         {/* Left Page */}
         <div className="col-9 p-5 border-start border-5">
-          <Jobs jobs={jobs} />
+          <ProductsContainer />
         </div>
       </div>
     </>

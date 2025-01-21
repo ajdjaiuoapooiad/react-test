@@ -2,7 +2,7 @@ import Job from "./Job"
 
 
 
-const Jobs = ({jobs}) => {
+const ProductsContainer = ({jobs}) => {
 
   return (
     <div>
@@ -23,4 +23,4 @@ const Jobs = ({jobs}) => {
   )
 }
 
-export default Jobs
+export default ProductsContainer

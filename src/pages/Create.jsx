@@ -1,6 +1,7 @@
 import { useRef, useState } from "react";
 import data from "../data";
-import JobList from "../components/Jobs";
+import ProductsContainer from '../components/ProductsContainer';
+
 
 const Create = () => {
   const [jobs, setJobs] = useState(data);
@@ -50,7 +51,7 @@ const Create = () => {
         </button>
 
         <div className="p-5 col-6">
-          <JobList />
+          <ProductsContainer />
         </div>
       </div>
     </>
