@@ -1,6 +1,7 @@
 import { Form, Link, useLoaderData } from "react-router-dom"
 import FormInput from "./FormInput";
 import FormSelect from "./FormSelect";
+import FormCheckbox from "./FormCheckbox";
 
 
 
@@ -42,6 +43,13 @@ const Filter = () => {
         list={['a-z', 'z-a', 'high', 'low']}
         defaultValue={order}
         size='select-sm'
+      />
+      {/* SHIPPING */}
+      <FormCheckbox
+        label='free shipping'
+        name='shipping'
+        defaultValue={shipping}
+        size='checkbox-sm'
       />
 
 
