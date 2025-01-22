@@ -1,6 +1,6 @@
 const FormSelect = ({list}) => {
   return (
-    <div className='form-control'>
+    <div className=''>
       <select 
       >
         {list.map((item) => {

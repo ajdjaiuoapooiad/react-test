@@ -21,7 +21,7 @@ const Products = () => {
     setSearchQuery(items)
   }
 
-  const selectFilter = (category) => {
+  const handleCategory = (category) => {
     console.log(category);
     
   }
@@ -33,17 +33,22 @@ const Products = () => {
         <div className="col-3 p-5 bg-light">
           <h4>カテゴリー一覧</h4>
           <div>
+            <label htmlFor="">キーワード</label>
             <input type="text" onChange={handlefilter} ref={ref} />
 
-            <select onChange={(item) => selectFilter(item)} >
+            <div className="my-3 px-2 py-3 border">
+              <label htmlFor="">カテゴリー</label>
               {categories.map((item) => {
                 return (
-                  <option key={item} value={item}  ref={category}>
+                  <div  key={item} >
+                  <button className="my-1 btn btn-dark" value={item}  onClick={handleCategory}>
                     {item}
-                  </option>
+                  </button><br />
+                  </div>
                 );
               })}
-            </select>
+            </div>
+
             <FormSelect list={incomes} />
           </div>
          
