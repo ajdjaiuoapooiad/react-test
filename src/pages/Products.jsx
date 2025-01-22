@@ -10,8 +10,9 @@ import FormSelect from "../components/FormSelect";
 const Products = () => {
   const [ jobs,setJobs ] = useState(data)
   const [ searchQuery,setSearchQuery ] = useState(data)
-  const categories = Array.from(new Set(data.map((data) => data.category)));
-  const incomes = Array.from(new Set(data.map((data) => data.income)));
+  const allCategorys = ['all', ...new Set(data.map((item) => item.category))]
+  const allIncomes = ['all', ...new Set(data.map((item) => item.category))]
+
   const ref = useRef()
   const category = useRef()
 
@@ -21,9 +22,13 @@ const Products = () => {
     setSearchQuery(items)
   }
 
-  const handleCategory = (category) => {
-    console.log(category);
-    
+  const filterCategory = (category) => {
+    if(category === 'all'){
+      setSearchQuery(data)
+      return;
+    }
+    const newItems = data.filter((item) => item.category === category )
+    setSearchQuery(newItems)
   }
 
   return (
@@ -38,10 +43,10 @@ const Products = () => {
 
             <div className="my-3 px-2 py-3 border">
               <label htmlFor="">カテゴリー</label>
-              {categories.map((item) => {
+              {allCategorys.map((item) => {
                 return (
                   <div  key={item} >
-                  <button className="my-1 btn btn-dark" value={item}  onClick={handleCategory}>
+                  <button className="my-1 btn btn-dark" value={item}  onClick={() => filterCategory(item)}>
                     {item}
                   </button><br />
                   </div>
@@ -49,7 +54,7 @@ const Products = () => {
               })}
             </div>
 
-            <FormSelect list={incomes} />
+            <FormSelect list={allIncomes} />
           </div>
          
         </div>
