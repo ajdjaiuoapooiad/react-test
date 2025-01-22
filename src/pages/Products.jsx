@@ -12,9 +12,7 @@ const Products = () => {
   const [ searchQuery,setSearchQuery ] = useState(data)
   const allCategorys = ['all', ...new Set(data.map((item) => item.category))]
   const allIncomes = ['all', ...new Set(data.map((item) => item.income))]
-
   const ref = useRef()
-  const category = useRef()
 
   const handlefilter = () => {
     console.log(ref.current.value);
@@ -39,6 +37,10 @@ const Products = () => {
     setSearchQuery(newItems)
   }
 
+
+
+
+  
   return (
     <>
       <div className="row">
@@ -46,6 +48,8 @@ const Products = () => {
         <div className="col-3 p-5 bg-light">
           <h4>カテゴリー一覧</h4>
           <div>
+
+            {/* Form Input  */}
             <div className="py-3 border p-2">
             <label htmlFor="">キーワード</label>
             <input className="w-75" type="text" onChange={handlefilter} ref={ref} />
