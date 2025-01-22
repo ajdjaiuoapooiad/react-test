@@ -4,24 +4,27 @@ import ProductsContainer from '../components/ProductsContainer';
 
 
 const Create = () => {
-  const [jobs, setJobs] = useState(data);
+  const [ jobs,setJobs ] = useState(data)
   const categorys = Array.from(new Set(jobs.map((j) => j.category)));
   const jobTitleRef = useRef();
   const jobIncomeRef = useRef();
+  const jobCategoryRef = useRef()
 
   const handleAddJob = () => {
     const title = jobTitleRef.current.value;
     const income = jobIncomeRef.current.value;
-    console.log(title, income);
+    const category = jobCategoryRef.current.value;
+    console.log(title, income,category);
 
     setJobs((prevJob) => {
       return [
         ...prevJob,
-        { id: 10, title: title, income: income, category: "Python" },
+        { id: 10, title: title, income: income, category: category },
       ];
     });
     jobTitleRef.current.value = null;
     jobIncomeRef.current.value = null;
+    jobCategoryRef.current.value = null;
   };
 
   return (
@@ -36,10 +39,10 @@ const Create = () => {
         <input type="text" ref={jobIncomeRef} />
 
         <h4>Category</h4>
-        <select>
+        <select ref={jobCategoryRef} >
           {categorys.map((c) => {
             return (
-              <option value="" key={c.id}>
+              <option value="" key={c}>
                 {c}
               </option>
             );
@@ -50,8 +53,12 @@ const Create = () => {
           送信
         </button>
 
+
+
+
+
         <div className="p-5 col-6">
-          <ProductsContainer />
+          <ProductsContainer jobs={jobs}/>
         </div>
       </div>
     </>
