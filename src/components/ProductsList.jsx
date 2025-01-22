@@ -12,7 +12,7 @@ const ProductsList = ({jobs}) => {
       {jobs.map((job) => {
 
         return (
-          <div key={job.id} className='border p-4 m-3'>
+          <div key={job.id} className='border px-3 py-2 m-3'>
             <strong className=''>{job.title}</strong>
             <p className='my-2'>カテゴリー: {job.category}</p>
             <p>年収: {job.income}</p>
