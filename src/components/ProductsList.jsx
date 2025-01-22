@@ -1,5 +1,5 @@
 
-import { Link, useLoaderData } from 'react-router-dom';
+import { useLoaderData } from 'react-router-dom';
 
 const ProductsList = () => {
   const { products } = useLoaderData();
@@ -7,12 +7,15 @@ const ProductsList = () => {
   
   return (
     <div className='mt-12 grid gap-y-8'>
+
       {products.map((product) => {
-        const { title, price, image, company } = product.attributes;
+        const { title, category, income } = product.attributes;
 
         return (
-          <div>
+          <div key={product.id} className='border p-3 m-3'>
             <p>{title}</p>
+            <p>{category}</p>
+            <p>{income}</p>
           </div>
         );
       })}
