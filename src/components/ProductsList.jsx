@@ -1,5 +1,5 @@
 
-import { useLoaderData } from 'react-router-dom';
+
 import data from '../data';
 import { useState } from 'react';
 
@@ -15,8 +15,10 @@ const ProductsList = () => {
       {jobs.map((job) => {
 
         return (
-          <div key={job.id}>
-
+          <div key={job.id} className='border p-4 m-3'>
+            <p className=''>{job.title}</p>
+            <p>カテゴリー: {job.category}</p>
+            <p>年収: {job.income}</p>
           </div>
         );
       })}
