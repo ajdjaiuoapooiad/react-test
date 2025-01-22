@@ -32,6 +32,7 @@ const Products = () => {
 
         {/* Left Page */}
         <div className="col-9 p-5 border-start border-5">
+          
           <ProductsContainer />
         </div>
       </div>

@@ -7,6 +7,7 @@ const ProductsList = () => {
   
   return (
     <div className='mt-12 grid gap-y-8'>
+      <h4>{products.length}　件 </h4>
 
       {products.map((product) => {
         const { title, category, income } = product.attributes;
