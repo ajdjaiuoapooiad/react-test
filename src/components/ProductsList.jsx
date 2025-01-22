@@ -3,9 +3,7 @@
 import data from '../data';
 import { useState } from 'react';
 
-const ProductsList = () => {
-  const [ jobs,setJobs ] = useState(data)
-  console.log(jobs);
+const ProductsList = ({jobs}) => {
   
   
   return (

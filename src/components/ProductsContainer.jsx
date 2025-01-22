@@ -2,11 +2,11 @@
 import ProductsList from './ProductsList';
 
 
-const ProductsContainer = () => {
+const ProductsContainer = ({jobs}) => {
   return (
     <>
       
-      <ProductsList />
+      <ProductsList jobs={jobs} />
     </>
   );
 };
