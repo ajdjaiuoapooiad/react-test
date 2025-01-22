@@ -1,5 +1,4 @@
 import { useRef, useState } from "react";
-import Filter from "../components/Filter";
 import ProductsContainer from "../components/ProductsContainer";
 import data from "../data";
 import FormSelect from "../components/FormSelect";
@@ -11,7 +10,7 @@ const Products = () => {
   const [ jobs,setJobs ] = useState(data)
   const [ searchQuery,setSearchQuery ] = useState(data)
   const allCategorys = ['all', ...new Set(data.map((item) => item.category))]
-  const allIncomes = ['all', ...new Set(data.map((item) => item.category))]
+  const allIncomes = ['all', ...new Set(data.map((item) => item.income))]
 
   const ref = useRef()
   const category = useRef()
