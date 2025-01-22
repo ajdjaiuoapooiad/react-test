@@ -15,7 +15,7 @@ const Products = () => {
   
     const handlefilter = () => {
       if(ref.current.value===''){
-        return jobs;
+        return setJobs(data);
       }
       const selectedItems = jobs.filter((job) => job.title.includes(ref.current.value))
       setJobs(selectedItems)
