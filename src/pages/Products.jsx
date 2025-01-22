@@ -9,17 +9,16 @@ import FormSelect from "../components/FormSelect";
 
 const Products = () => {
   const [ jobs,setJobs ] = useState(data)
+  const [ searchQuery,setSearchQuery ] = useState(data)
   const categories = Array.from(new Set(data.map((data) => data.category)));
-    const incomes = Array.from(new Set(data.map((data) => data.income)));
-    const ref = useRef()
+  const incomes = Array.from(new Set(data.map((data) => data.income)));
+  const ref = useRef()
   
-    const handlefilter = () => {
-      if(ref.current.value===''){
-        return setJobs(data);
-      }
-      const selectedItems = jobs.filter((job) => job.title.includes(ref.current.value))
-      setJobs(selectedItems)
-    }
+  const handlefilter = () => {
+    console.log(ref.current.value);
+    const items = jobs.filter((job) => job.title.includes(ref.current.value))
+    setSearchQuery(items)
+  }
 
   return (
     <>
@@ -38,7 +37,7 @@ const Products = () => {
         {/* Left Page */}
         <div className="col-9 p-5 border-start border-5">
           
-          <ProductsContainer jobs={jobs} />
+          <ProductsContainer jobs={searchQuery} />
         </div>
       </div>
     </>
