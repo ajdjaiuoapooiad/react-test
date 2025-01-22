@@ -1,7 +1,6 @@
 import { Form, Link, useLoaderData } from "react-router-dom"
 import FormInput from "./FormInput";
 import FormSelect from "./FormSelect";
-import FormCheckbox from "./FormCheckbox";
 
 
 
@@ -9,7 +8,7 @@ import FormCheckbox from "./FormCheckbox";
 
 const Filter = () => {
   const { meta, params } = useLoaderData();
-  const { search, company, category, shipping, order, price } = params;
+  const { search, income, category } = params;
   return (
     <Form className='bg-base-200 rounded-md px-8 py-4 grid gap-x-4 gap-y-8 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 items-center'>
       {/* SEARCH */}
@@ -30,27 +29,13 @@ const Filter = () => {
       />
       {/* COMPANIES */}
       <FormSelect
-        label='select company'
-        name='company'
-        list={meta.companies}
-        defaultValue={company}
+        label='select income'
+        name='income'
+        list={meta.incomes}
+        defaultValue={income}
         size='select-sm'
       />
-      {/* ORDER */}
-      <FormSelect
-        label='sort by'
-        name='order'
-        list={['a-z', 'z-a', 'high', 'low']}
-        defaultValue={order}
-        size='select-sm'
-      />
-      {/* SHIPPING */}
-      <FormCheckbox
-        label='free shipping'
-        name='shipping'
-        defaultValue={shipping}
-        size='checkbox-sm'
-      />
+   
 
 
       {/* BUTTONS */}

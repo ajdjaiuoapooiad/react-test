@@ -4,7 +4,7 @@ import ProductsContainer from "../components/ProductsContainer";
 
 
 // 検索機能
-const url = '/products';
+const url = '/db';
 export const loader = async ({ request }) => {
   const params = Object.fromEntries([
     ...new URL(request.url).searchParams.entries(),
