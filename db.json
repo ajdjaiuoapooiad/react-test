@@ -9,7 +9,7 @@
             }
         },
         {
-            "id": 1,
+            "id": 10,
             "attributes": {
             "title": "avant-garde lamp",
             "category": "Django",
@@ -81,7 +81,7 @@
             }
         },
         {
-            "id": 10,
+            "id": 11,
             "attributes": {
             "title": "大企業内定多数！注目の松尾研発スタートアップで学生エンジニア採用強化！",
             "category": "Next.js",
@@ -90,26 +90,23 @@
         },
     ],
     "meta": {
-    "categories": [
-    "all",
-    "Python",
-    "Django",
-    "React",
-    "Next",
-    ],
-    "incomes": [
-    "all",
-    200,
-    300,
-    400,
-    500,
-    600,
-    700,
-    800,
-    900,
-    ]
+        "categories": [
+            "all",
+            "Python",
+            "Django",
+            "React",
+            "Next",
+        ],
+        "incomes": [
+            200,
+            300,
+            400,
+            500,
+            600,
+            700,
+            800,
+            900,
+        ],
     }
 }
 
-
-    
