@@ -2,6 +2,7 @@ import { useRef, useState } from "react";
 import ProductsContainer from "../components/ProductsContainer";
 import data from "../data";
 import FormSelect from "../components/FormSelect";
+import FormButton from "../components/FormButton";
 
 
 
@@ -29,6 +30,14 @@ const Products = () => {
     const newItems = data.filter((item) => item.category === category )
     setSearchQuery(newItems)
   }
+  const filterIncome = (income) => {
+    if(income === 'all'){
+      setSearchQuery(data)
+      return;
+    }
+    const newItems = data.filter((item) => item.income === income )
+    setSearchQuery(newItems)
+  }
 
   return (
     <>
@@ -37,23 +46,23 @@ const Products = () => {
         <div className="col-3 p-5 bg-light">
           <h4>カテゴリー一覧</h4>
           <div>
+            <div className="py-3 border p-2">
             <label htmlFor="">キーワード</label>
-            <input type="text" onChange={handlefilter} ref={ref} />
-
-            <div className="my-3 px-2 py-3 border">
-              <label htmlFor="">カテゴリー</label>
-              {allCategorys.map((item) => {
-                return (
-                  <div  key={item} >
-                  <button className="my-1 btn btn-dark" value={item}  onClick={() => filterCategory(item)}>
-                    {item}
-                  </button><br />
-                  </div>
-                );
-              })}
+            <input className="w-75" type="text" onChange={handlefilter} ref={ref} />
             </div>
 
-            <FormSelect list={allIncomes} />
+            {/* Filter Category */}
+            <div className="my-3 px-2 py-3 border">
+              <label htmlFor="">カテゴリー</label>
+              <FormButton list={allCategorys} filter={filterCategory} />
+            </div>
+
+            {/* Filter Income */}
+            <div className="my-3 px-2 py-3 border">
+              <label htmlFor="">年収</label>
+            <FormButton list={allIncomes} filter={filterIncome}  />
+            </div>
+
           </div>
          
         </div>

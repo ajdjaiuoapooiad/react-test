@@ -1,4 +1,4 @@
-const FormSelect = ({list}) => {
+const FormSelect = ({list,filter}) => {
   return (
     <div className=''>
       <select 
