@@ -13,11 +13,17 @@ const Products = () => {
   const categories = Array.from(new Set(data.map((data) => data.category)));
   const incomes = Array.from(new Set(data.map((data) => data.income)));
   const ref = useRef()
-  
+  const category = useRef()
+
   const handlefilter = () => {
     console.log(ref.current.value);
     const items = jobs.filter((job) => job.title.includes(ref.current.value))
     setSearchQuery(items)
+  }
+
+  const selectFilter = (category) => {
+    console.log(category);
+    
   }
 
   return (
@@ -28,7 +34,16 @@ const Products = () => {
           <h4>カテゴリー一覧</h4>
           <div>
             <input type="text" onChange={handlefilter} ref={ref} />
-            <FormSelect list={categories} />
+
+            <select onChange={(item) => selectFilter(item)} >
+              {categories.map((item) => {
+                return (
+                  <option key={item} value={item}  ref={category}>
+                    {item}
+                  </option>
+                );
+              })}
+            </select>
             <FormSelect list={incomes} />
           </div>
          
