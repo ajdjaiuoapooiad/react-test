@@ -1,22 +1,22 @@
 
 import { useLoaderData } from 'react-router-dom';
+import data from '../data';
+import { useState } from 'react';
 
 const ProductsList = () => {
-  const { products } = useLoaderData();
-  console.log(products);
+  const [ jobs,setJobs ] = useState(data)
+  console.log(jobs);
+  
   
   return (
     <div className='mt-12 grid gap-y-8'>
-      <h4>{products.length}　件 </h4>
+      <h4>{jobs.length}　件 </h4>
 
-      {products.map((product) => {
-        const { title, category, income } = product.attributes;
+      {jobs.map((job) => {
 
         return (
-          <div key={product.id} className='border p-3 m-3'>
-            <p>{title}</p>
-            <p>{category}</p>
-            <p>{income}</p>
+          <div key={job.id}>
+
           </div>
         );
       })}
