@@ -1,6 +1,5 @@
 import { createBrowserRouter, RouterProvider } from "react-router-dom";
 import Homelayout from "./pages/Homelayout";
-import Landing from "./pages/Landing";
 import Error from "./pages/Error";
 import ErrorElement from "./components/ErrorElement";
 import Create from './pages/Create';

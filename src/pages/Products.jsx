@@ -1,7 +1,6 @@
 import { useRef, useState } from "react";
 import ProductsContainer from "../components/ProductsContainer";
 import data from "../data";
-import FormSelect from "../components/FormSelect";
 import FormButton from "../components/FormButton";
 
 
@@ -46,7 +45,7 @@ const Products = () => {
       <div className="row">
         {/* Right Page */}
         <div className="col-3 p-5 bg-light">
-          <h4>カテゴリー一覧</h4>
+          <h4></h4>
           <div>
 
             {/* Form Input  */}
@@ -57,7 +56,7 @@ const Products = () => {
 
             {/* Filter Category */}
             <div className="my-3 px-2 py-3 border">
-              <label htmlFor="">カテゴリー</label>
+              <label htmlFor="">求人カテゴリ</label>
               <FormButton list={allCategorys} filter={filterCategory} />
             </div>
 
