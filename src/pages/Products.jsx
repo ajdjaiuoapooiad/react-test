@@ -40,7 +40,7 @@ const Products = () => {
 
 
 
-  
+
   return (
     <>
       <div className="row">
@@ -71,8 +71,10 @@ const Products = () => {
          
         </div>
 
+
+
         {/* Left Page */}
-        <div className="col-9 p-5 border-start border-5">
+        <div className="col-9  border-start border-5">
           
           <ProductsContainer jobs={searchQuery} />
         </div>

@@ -7,8 +7,7 @@ const ProductsList = ({jobs}) => {
   
   
   return (
-    <div className='mt-12 grid gap-y-8'>
-      <h4>{jobs.length}　件 </h4>
+    <div className='mt-12 grid gap-y-8 '>
 
       {jobs.map((job) => {
 
