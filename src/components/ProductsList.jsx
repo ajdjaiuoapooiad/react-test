@@ -13,8 +13,8 @@ const ProductsList = ({jobs}) => {
 
         return (
           <div key={job.id} className='border p-4 m-3'>
-            <p className=''>{job.title}</p>
-            <p>カテゴリー: {job.category}</p>
+            <strong className=''>{job.title}</strong>
+            <p className='my-2'>カテゴリー: {job.category}</p>
             <p>年収: {job.income}</p>
           </div>
         );

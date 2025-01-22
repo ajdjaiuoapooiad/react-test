@@ -6,8 +6,8 @@ const ProductsContainer = ({jobs}) => {
   return (
     <div className='p-2'>
 
-      <h3>検索結果</h3>
-      <h4 className='m-3'>{jobs.length} 件 </h4>
+      <h3>検索一覧</h3>
+      <strong className='m-3 font-weight-bolder'>該当件数{jobs.length} 件 </strong>
       <ProductsList jobs={jobs} />
     </div>
   );
