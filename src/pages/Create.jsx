@@ -1,6 +1,7 @@
 import { useRef, useState } from "react";
 import data from "../data";
 import ProductsContainer from '../components/ProductsContainer';
+import { redirect } from "react-router-dom";
 
 
 const Create = () => {
@@ -26,43 +27,52 @@ const Create = () => {
     jobTitleRef.current.value = null;
     jobIncomeRef.current.value = null;
     jobCategoryRef.current.value = null;
+    redirect('/')
   };
 
   return (
-    <>
-      <div className="p-5 ">
-        <h1>Createページ</h1>
+    <div>
+      <div className="p-5 m-5 w-50 border">
+        <h4>求人投稿</h4>
 
-        <h4>Title</h4>
-
-        <input type="text" ref={jobTitleRef} />
-        <h4>Income</h4>
-        <input type="text" ref={jobIncomeRef} />
-
-        <h4>Category</h4>
+        <div className="py-3">
+        <strong>求人カテゴリを選択</strong><br />
         <select ref={jobCategoryRef} >
           {allCategorys.map((category) => {
             return (
-              <option value={category} key={category}>
+              <option value={category} key={category} defaultValue='カテゴリーを選択'>
                 {category}
               </option>
             );
           })}
         </select>
+        </div >
+      
+        <div className="py-3">
+        <strong>年収(万円)</strong><br />
+        <input type="text" ref={jobIncomeRef} /><br />
 
-        <button className="btn btn-info" onClick={handleAddJob}>
-          送信
+        </div>
+
+        <div className="py-3">
+        <strong>求人タイトル</strong><br />
+        <input type="text" ref={jobTitleRef} />
+        </div>
+
+
+        <button className="btn btn-dark px-3 my-3" onClick={handleAddJob}>
+          投稿
         </button>
 
 
+      </div>
 
 
 
         <div className="p-5 col-6">
           <ProductsContainer jobs={jobs}/>
         </div>
-      </div>
-    </>
+    </div>
   );
 };
 
