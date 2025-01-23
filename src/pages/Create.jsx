@@ -40,10 +40,10 @@ const Create = () => {
 
         <h4>Category</h4>
         <select ref={jobCategoryRef} >
-          {categorys.map((c) => {
+          {categorys.map((category) => {
             return (
-              <option value="" key={c}>
-                {c}
+              <option value={category} key={category}>
+                {category}
               </option>
             );
           })}
