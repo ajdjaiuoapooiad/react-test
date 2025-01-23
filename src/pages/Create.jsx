@@ -1,7 +1,6 @@
 import { useRef, useState } from "react";
 import data from "../data";
 import ProductsContainer from '../components/ProductsContainer';
-import { redirect } from "react-router-dom";
 
 
 const Create = () => {
@@ -27,7 +26,6 @@ const Create = () => {
     jobTitleRef.current.value = null;
     jobIncomeRef.current.value = null;
     jobCategoryRef.current.value = null;
-    redirect('/')
   };
 
   return (
@@ -60,7 +58,7 @@ const Create = () => {
         </div>
 
 
-        <button className="btn btn-dark px-3 my-3" onClick={handleAddJob}>
+        <button className="btn btn-dark px-3 my-3" onClick={handleAddJob} >
           投稿
         </button>
 
